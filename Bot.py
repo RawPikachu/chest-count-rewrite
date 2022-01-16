@@ -3,11 +3,14 @@ from discord.ext import commands
 from ErrorHandler import CommandErrorHandler
 from Help import MyHelpCommand
 from Wynncraft import Wynncraft
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 intents = discord.Intents.default()
 intents.members = True
-bot = commands.Bot(command_prefix='b!', intents=intents, help_command=None)
+bot = commands.Bot(command_prefix='c!', intents=intents, help_command=None)
 bot.add_cog(CommandErrorHandler(bot))
 bot.add_cog(Wynncraft(bot))
 
